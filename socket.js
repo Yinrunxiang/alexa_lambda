@@ -8,7 +8,7 @@ socket.bind(0, '0.0.0.0', function () {
 const api = {
     send(message) {
         socket.send(message, 0, message.length, 8000, '39.108.129.244', function (err, bytes) {
-            socket.close();
+            // socket.close();
         });
     }
 }

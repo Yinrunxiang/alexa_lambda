@@ -49,7 +49,7 @@ MinecraftHelper.prototype.eventHandlers.onLaunch = function (launchRequest, sess
 };
 
 MinecraftHelper.prototype.intentHandlers = {
-    "openIntent": function (intent, session, response) {
+    "openIntent": function (intent, session,context, response) {
         var itemSlot = intent.slots.Device,
             itemName;
         if (itemSlot && itemSlot.value){
@@ -59,13 +59,14 @@ MinecraftHelper.prototype.intentHandlers = {
         var cardTitle = "Device for " + itemName,
             recipe = recipes[itemName],
             speechOutput,
-            repromptOutput;
+            repromptOutput,token;
         if (recipe) {
             speechOutput = {
                 speech: recipe,
                 type: AlexaSkill.speechOutputType.PLAIN_TEXT
             };
-            response.openDevice(speechOutput, cardTitle, recipe);
+            var token = session.user.accessToken
+            response.openDevice(speechOutput, cardTitle, recipe,token);
         } else {
             var speech;
             if (itemName) {
@@ -84,7 +85,7 @@ MinecraftHelper.prototype.intentHandlers = {
             response.ask(speechOutput, repromptOutput);
         }
     },
-    "closeIntent": function (intent, session, response) {
+    "closeIntent": function (intent, session,context, response) {
         var itemSlot = intent.slots.Device,
             itemName;
         if (itemSlot && itemSlot.value){
@@ -100,7 +101,8 @@ MinecraftHelper.prototype.intentHandlers = {
                 speech: recipe,
                 type: AlexaSkill.speechOutputType.PLAIN_TEXT
             };
-            response.closeDevice(speechOutput, cardTitle, recipe);
+            var token = session.user.accessToken
+            response.openDevice(speechOutput, cardTitle, recipe,token);
         } else {
             var speech;
             if (itemName) {

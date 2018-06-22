@@ -10,7 +10,7 @@
 
 'use strict';
 
-// var api = require('./api');
+var api = require('./api');
 var socket = require('./socket');
 function AlexaSkill(appId) {
     this._appId = appId;
@@ -27,7 +27,7 @@ AlexaSkill.prototype.requestHandlers = {
     },
 
     IntentRequest: function (event, context, response) {
-        this.eventHandlers.onIntent.call(this, event.request, event.session, response);
+        this.eventHandlers.onIntent.call(this, event.request, event.session, context, response);
     },
 
     SessionEndedRequest: function (event, context) {
@@ -58,13 +58,13 @@ AlexaSkill.prototype.eventHandlers = {
     /**
      * Called when the user specifies an intent.
      */
-    onIntent: function (intentRequest, session, response) {
+    onIntent: function (intentRequest, session, context, response) {
         var intent = intentRequest.intent,
             intentName = intentRequest.intent.name,
             intentHandler = this.intentHandlers[intentName];
         if (intentHandler) {
             console.log('dispatch intent = ' + intentName);
-            intentHandler.call(this, intent, session, response);
+            intentHandler.call(this, intent, session, context, response);
         } else {
             throw 'Unsupported intent = ' + intentName;
         }
@@ -104,7 +104,7 @@ AlexaSkill.prototype.execute = function (event, context) {
 
         // Route the request to the proper handler which may have been overriden.
         var requestHandler = this.requestHandlers[event.request.type];
-        requestHandler.call(this, event, context, new Response(context, event.session));
+        requestHandler.call(this, event, event.context, new Response(context, event.session));
     } catch (e) {
         console.log("Unexpected exception " + e);
         context.fail(e);
@@ -149,8 +149,8 @@ Response.prototype = (function () {
             };
         }
         var returnResult = {
-                version: '1.0',
-                response: alexaResponse
+            version: '1.0',
+            response: alexaResponse
         };
         if (options.session && options.session.attributes) {
             returnResult.sessionAttributes = options.session.attributes;
@@ -159,43 +159,62 @@ Response.prototype = (function () {
     };
 
     return {
-        openDevice: function (speechOutput, cardTitle, cardContent) {
-            var data = buildSpeechletResponse({
+        openDevice: function (speechOutput, cardTitle, cardContent, token) {
+            var alexaData = buildSpeechletResponse({
                 session: this._session,
                 output: speechOutput,
                 cardTitle: cardTitle,
                 cardContent: cardContent,
                 shouldEndSession: true
             })
-            // api.post('admin/alexa',data,function(data){
-            //     // this._context.succeed(data);
-            // })
             var socketObj = {
-                intent:'open'
+                intent: 'open',
+                token: token
             }
-            
-            this._context.succeed(data);
             socket.send(JSON.stringify(socketObj))
-            
+            this._context.succeed(alexaData);
+            // var  data= {
+            //     access_token: token
+            // }
+            // api.post('https://yinrunxiang.cn/alexa/oauth2_server/resource.php', data, function (data) {
+            //     var user_id = data
+            //     var socketObj = {
+            //         intent: 'open',
+            //         token: user_id
+            //     }
+            //     socket.send(JSON.stringify(socketObj))
+
+            // })
+            // this._context.succeed(alexaData);
+
         },
-        closeDevice: function (speechOutput, cardTitle, cardContent) {
-            var data = buildSpeechletResponse({
+        closeDevice: function (speechOutput, cardTitle, cardContent, token) {
+            var alexaData = buildSpeechletResponse({
                 session: this._session,
                 output: speechOutput,
                 cardTitle: cardTitle,
                 cardContent: cardContent,
                 shouldEndSession: true
             })
-            // api.post('admin/alexa',data,function(data){
-            //     // this._context.succeed(data);
-            // })
             var socketObj = {
-                intent:'close'
+                intent: 'close',
+                token: token
             }
-          
-            this._context.succeed(data);
             socket.send(JSON.stringify(socketObj))
-            
+            this._context.succeed(alexaData);
+            // var data = {
+            //     access_token: token
+            // }
+            // api.post('https://yinrunxiang.cn/alexa/oauth2_server/resource.php', data, function (data) {
+            //     var user_id = data
+            //     var socketObj = {
+            //         intent: 'close',
+            //         token: user_id
+            //     }
+            //     socket.send(JSON.stringify(socketObj))
+
+            // })
+            // this._context.succeed(alexaData);
         },
         tell: function (speechOutput) {
             this._context.succeed(buildSpeechletResponse({
