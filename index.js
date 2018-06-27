@@ -41,7 +41,7 @@ MinecraftHelper.prototype = Object.create(AlexaSkill.prototype);
 MinecraftHelper.prototype.constructor = MinecraftHelper;
 
 MinecraftHelper.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-    var speechText = "You can tell smart home open or close device, or you can say exit.... Now, what can I help you with?";
+    var speechText = "Welcome to use G4 voice control, you can say open or close device to control";
     // If the user either does not reply to the welcome message or says something that is not
     // understood, they will be prompted again with this text.
     var repromptText = "For instructions on what you can say, please say help me.";
@@ -49,77 +49,91 @@ MinecraftHelper.prototype.eventHandlers.onLaunch = function (launchRequest, sess
 };
 
 MinecraftHelper.prototype.intentHandlers = {
-    "openIntent": function (intent, session,context, response) {
+    "openIntent": function (intent, session, response) {
         var itemSlot = intent.slots.Device,
             itemName;
-        if (itemSlot && itemSlot.value){
+        if (itemSlot && itemSlot.value) {
             itemName = itemSlot.value.toLowerCase();
         }
 
         var cardTitle = "Device for " + itemName,
-            recipe = recipes[itemName],
+        device = itemName,
+            recipe = "ok",
             speechOutput,
-            repromptOutput,token;
-        if (recipe) {
-            speechOutput = {
-                speech: recipe,
-                type: AlexaSkill.speechOutputType.PLAIN_TEXT
-            };
-            var token = session.user.accessToken
-            response.openDevice(speechOutput, cardTitle, recipe,token);
-        } else {
-            var speech;
-            if (itemName) {
-                speech = "I'm sorry, I currently do not know the device for " + itemName + ". What else can I help with?";
-            } else {
-                speech = "I'm sorry, I currently do not know that device. What else can I help with?";
-            }
-            speechOutput = {
-                speech: speech,
-                type: AlexaSkill.speechOutputType.PLAIN_TEXT
-            };
-            repromptOutput = {
-                speech: "What else can I help with?",
-                type: AlexaSkill.speechOutputType.PLAIN_TEXT
-            };
-            response.ask(speechOutput, repromptOutput);
-        }
+            repromptOutput, token;
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        var token = session.user.accessToken
+        response.openDevice(speechOutput, cardTitle, recipe, token,device);
     },
-    "closeIntent": function (intent, session,context, response) {
+    "closeIntent": function (intent, session, response) {
         var itemSlot = intent.slots.Device,
             itemName;
-        if (itemSlot && itemSlot.value){
+        if (itemSlot && itemSlot.value) {
             itemName = itemSlot.value.toLowerCase();
         }
 
         var cardTitle = "Device for " + itemName,
-            recipe = recipes[itemName],
+        device = itemName,
+            recipe = "ok",
             speechOutput,
             repromptOutput;
-        if (recipe) {
-            speechOutput = {
-                speech: recipe,
-                type: AlexaSkill.speechOutputType.PLAIN_TEXT
-            };
-            var token = session.user.accessToken
-            response.openDevice(speechOutput, cardTitle, recipe,token);
-        } else {
-            var speech;
-            if (itemName) {
-                speech = "I'm sorry, I currently do not know the device for " + itemName + ". What else can I help with?";
-            } else {
-                speech = "I'm sorry, I currently do not know that device. What else can I help with?";
-            }
-            speechOutput = {
-                speech: speech,
-                type: AlexaSkill.speechOutputType.PLAIN_TEXT
-            };
-            repromptOutput = {
-                speech: "What else can I help with?",
-                type: AlexaSkill.speechOutputType.PLAIN_TEXT
-            };
-            response.ask(speechOutput, repromptOutput);
-        }
+
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        var token = session.user.accessToken
+        response.closeDevice(speechOutput, cardTitle, recipe, token,device);
+
+    },
+    // "closeIntent": function (intent, session,context, response) {
+    //     var itemSlot = intent.slots.Device,
+    //         itemName;
+    //     if (itemSlot && itemSlot.value){
+    //         itemName = itemSlot.value.toLowerCase();
+    //     }
+
+    //     var cardTitle = "Device for " + itemName,
+    //         recipe = recipes[itemName],
+    //         speechOutput,
+    //         repromptOutput;
+    //     if (recipe) {
+    //         speechOutput = {
+    //             speech: recipe,
+    //             type: AlexaSkill.speechOutputType.PLAIN_TEXT
+    //         };
+    //         var token = session.user.accessToken
+    //         response.openDevice(speechOutput, cardTitle, recipe,token);
+    //     } else {
+    //         var speech;
+    //         if (itemName) {
+    //             speech = "I'm sorry, I currently do not know the device for " + itemName + ". What else can I help with?";
+    //         } else {
+    //             speech = "I'm sorry, I currently do not know that device. What else can I help with?";
+    //         }
+    //         speechOutput = {
+    //             speech: speech,
+    //             type: AlexaSkill.speechOutputType.PLAIN_TEXT
+    //         };
+    //         repromptOutput = {
+    //             speech: "What else can I help with?",
+    //             type: AlexaSkill.speechOutputType.PLAIN_TEXT
+    //         };
+    //         response.ask(speechOutput, repromptOutput);
+    //     }
+    // },
+
+    "AMAZON.StopIntent": function (intent, session, response) {
+        var speechOutput = "Goodbye";
+        response.tell(speechOutput);
+    },
+
+    "AMAZON.SessionEndedRequest": function (intent, session, response) {
+        var speechOutput = "Goodbye";
+        response.tell(speechOutput);
     },
 
     "AMAZON.StopIntent": function (intent, session, response) {
@@ -127,14 +141,9 @@ MinecraftHelper.prototype.intentHandlers = {
         response.tell(speechOutput);
     },
 
-    "AMAZON.CancelIntent": function (intent, session, response) {
-        var speechOutput = "Goodbye";
-        response.tell(speechOutput);
-    },
-
     "AMAZON.HelpIntent": function (intent, session, response) {
-        var speechText = "You can tell smart home open or close device, or you can say exit... Now, what can I help you with?";
-        var repromptText = "You can tell smart home open or close device, or you can say exit.... Now, what can I help you with?";
+        var speechText = "You can tell G Four open or close device, or you can say exit";
+        var repromptText = "You can tell G Four open or close device, or you can say exit";
         var speechOutput = {
             speech: speechText,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
@@ -144,7 +153,20 @@ MinecraftHelper.prototype.intentHandlers = {
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
         response.ask(speechOutput, repromptOutput);
-    }
+    },
+    "AMAZON.FallbackIntent": function (intent, session, response) {
+        var speechText = "You can tell G Four open or close device, or you can say exit";
+        var repromptText = "You can tell G Four open or close device, or you can say exit";
+        var speechOutput = {
+            speech: speechText,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        var repromptOutput = {
+            speech: repromptText,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        response.ask(speechOutput, repromptOutput);
+    },
 };
 
 exports.handler = function (event, context) {

@@ -27,12 +27,14 @@ AlexaSkill.prototype.requestHandlers = {
     },
 
     IntentRequest: function (event, context, response) {
-        this.eventHandlers.onIntent.call(this, event.request, event.session, context, response);
+        this.eventHandlers.onIntent.call(this, event.request, event.session, response);
     },
 
-    SessionEndedRequest: function (event, context) {
-        this.eventHandlers.onSessionEnded(event.request, event.session);
-        context.succeed();
+    SessionEndedRequest: function (event, context, response) {
+        var speechOutput = "Goodbye";
+        response.tell(speechOutput);
+        // this.eventHandlers.onSessionEnded(event.request, event.session);
+        // context.succeed();
     }
 };
 
@@ -58,13 +60,13 @@ AlexaSkill.prototype.eventHandlers = {
     /**
      * Called when the user specifies an intent.
      */
-    onIntent: function (intentRequest, session, context, response) {
+    onIntent: function (intentRequest, session, response) {
         var intent = intentRequest.intent,
             intentName = intentRequest.intent.name,
             intentHandler = this.intentHandlers[intentName];
         if (intentHandler) {
             console.log('dispatch intent = ' + intentName);
-            intentHandler.call(this, intent, session, context, response);
+            intentHandler.call(this, intent, session, response);
         } else {
             throw 'Unsupported intent = ' + intentName;
         }
@@ -75,6 +77,7 @@ AlexaSkill.prototype.eventHandlers = {
      * Subclasses could have overriden this function to close any open resources.
      */
     onSessionEnded: function (sessionEndedRequest, session) {
+       
     }
 };
 
@@ -159,16 +162,17 @@ Response.prototype = (function () {
     };
 
     return {
-        openDevice: function (speechOutput, cardTitle, cardContent, token) {
+        openDevice: function (speechOutput, cardTitle, cardContent, token,device) {
             var alexaData = buildSpeechletResponse({
                 session: this._session,
                 output: speechOutput,
                 cardTitle: cardTitle,
                 cardContent: cardContent,
-                shouldEndSession: true
+                shouldEndSession: false
             })
             var socketObj = {
                 intent: 'open',
+                device: device,
                 token: token
             }
             socket.send(JSON.stringify(socketObj))
@@ -188,16 +192,17 @@ Response.prototype = (function () {
             // this._context.succeed(alexaData);
 
         },
-        closeDevice: function (speechOutput, cardTitle, cardContent, token) {
+        closeDevice: function (speechOutput, cardTitle, cardContent, token,device) {
             var alexaData = buildSpeechletResponse({
                 session: this._session,
                 output: speechOutput,
                 cardTitle: cardTitle,
                 cardContent: cardContent,
-                shouldEndSession: true
+                shouldEndSession: false
             })
             var socketObj = {
                 intent: 'close',
+                device: device,
                 token: token
             }
             socket.send(JSON.stringify(socketObj))

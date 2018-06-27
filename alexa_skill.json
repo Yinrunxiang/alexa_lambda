@@ -1,0 +1,380 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "g four",
+            "intents": [
+                {
+                    "name": "openIntent",
+                    "slots": [
+                        {
+                            "name": "Device",
+                            "type": "LIST_OF_DEVICES",
+                            "samples": [
+                                "openIntent open {Device}",
+                                "openIntent turn on {Device}",
+                                "openIntent open the {Device}",
+                                "openIntent turn on the {Device}"
+                            ]
+                        },
+                        {
+                            "name": "Room",
+                            "type": "LIST_OF_ROOMS"
+                        }
+                    ],
+                    "samples": [
+                        "openIntent open {Room} {Device}",
+                        "openIntent turn on {Room} {Device}",
+                        "openIntent open the {Room} {Device}",
+                        "openIntent turn on the {Room} {Device}"
+                    ]
+                },
+                {
+                    "name": "closeIntent",
+                    "slots": [
+                        {
+                            "name": "Device",
+                            "type": "LIST_OF_DEVICES"
+                        }
+                    ],
+                    "samples": [
+                        "closeIntent close {Device}",
+                        "closeIntent turn off {Device}",
+                        "closeIntent close the {Device}",
+                        "closeIntent turn off the {Device}"
+                    ]
+                },
+                {
+                    "name": "readIntent",
+                    "slots": [
+                        {
+                            "name": "Device",
+                            "type": "LIST_OF_DEVICES"
+                        }
+                    ],
+                    "samples": [
+                        "readIntent read {Device}",
+                        "readIntent status of {Device}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.MoreIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateSettingsIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PreviousIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "light",
+                    "values": [
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "light"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_DEVICES",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "light"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "led"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ac"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "music"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "floorheat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "s one"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LIST_OF_ROOMS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "bedroom"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "W.C"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bathroom"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "balcony"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "corridor"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "PlanMyTrip",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.1096343369896"
+                    },
+                    "slots": [
+                        {
+                            "name": "travelDate",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.924477721275.367201351270"
+                            }
+                        },
+                        {
+                            "name": "toCity",
+                            "type": "AMAZON.US_CITY",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.924477721275.885841590425"
+                            }
+                        },
+                        {
+                            "name": "fromCity",
+                            "type": "AMAZON.US_CITY",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.186469474087.1029396093044",
+                                "elicitation": "Elicit.Slot.924477721275.191955839720"
+                            }
+                        },
+                        {
+                            "name": "travelMode",
+                            "type": "LIST_OF_TRAVEL_MODES",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.924477721275.266137038000"
+                            }
+                        },
+                        {
+                            "name": "activity",
+                            "type": "LIST_OF_ACTIVITIES",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.924477721275.1297414747229"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.924477721275.367201351270",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "When is this trip?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "When will you travel?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "On what date will you travel?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.924477721275.885841590425",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Tell me the city you want to travel to."
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What city are you going to?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Where are you going?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.924477721275.191955839720",
+                "variations": [
+                    {
+                        "type": "SSML",
+                        "value": "<speak><emphasis level='strong'>From where</emphasis> did you want to start your trip</speak>"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Where are you starting your trip?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What city are you leaving from?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.924477721275.266137038000",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How are you going to get to {toCity}?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.924477721275.1297414747229",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What activities are you planning for this trip?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What do you plan to do in {toCity}"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1096343369896",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you sure you want me to save a trip from {fromCity} to {toCity} on {travelDate}?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Please confirm that you want to travel from {fromCity} to {toCity} on {travelDate}"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "I'm saving your trip from {fromCity} to {toCity} on {travelDate}, is that OK?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.186469474087.1029396093044",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please verify that you want to start your trip in {fromCity}"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "I heard you want to leave from {fromCity}, right?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "You wanted to leave from {fromCity}, right?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "You said you're leaving from {fromCity}, right?"
+                    }
+                ]
+            }
+        ]
+    }
+}
