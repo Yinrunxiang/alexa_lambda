@@ -12,10 +12,10 @@
                         }
                     ],
                     "samples": [
-                        "open {Device} {Device} {Device}",
-                        "turn on {Device} {Device} {Device}",
-                        "open the {Device} {Device} {Device}",
-                        "turn on the {Device} {Device} {Device}"
+                        "openIntent open {Device} {Device} {Device}",
+                        "openIntent turn on {Device} {Device} {Device}",
+                        "openIntent open the {Device} {Device} {Device}",
+                        "openIntent turn on the {Device} {Device} {Device}"
                     ]
                 },
                 {
@@ -27,10 +27,10 @@
                         }
                     ],
                     "samples": [
-                        "close {Device} {Device} {Device}",
-                        "turn off {Device} {Device} {Device}",
-                        "close the {Device} {Device} {Device}",
-                        "turn off the {Device} {Device} {Device}"
+                        "closeIntent close {Device} {Device} {Device}",
+                        "closeIntent turn off {Device} {Device} {Device}",
+                        "closeIntent close the {Device} {Device} {Device}",
+                        "closeIntent turn off the {Device} {Device} {Device}"
                     ]
                 },
                 {
@@ -50,10 +50,8 @@
                         }
                     ],
                     "samples": [
-                        "set {Device} {Device} {Device} {Mode} to {Grade}",
-                        "set {Device} {Device} {Device} to {Grade} {Grade}",
-                        "set the {Device} {Device} {Device} {Mode} to {Grade} {Grade}",
-                        "set the {Device} {Device} {Device} to {Grade} {Grade}"
+                        "modeIntent Set the {Device} {Device} {Device} {Mode} to {Grade} {Grade}",
+                        "modeIntent Set the {Device} {Device} {Device} to {Grade} {Grade}"
                     ]
                 },
                 {
@@ -207,99 +205,6 @@
                     ]
                 }
             ]
-        },
-        "dialog": {
-            "intents": [
-                {
-                    "name": "openIntent",
-                    "confirmationRequired": false,
-                    "prompts": {},
-                    "slots": [
-                        {
-                            "name": "Device",
-                            "type": "LIST_OF_DEVICES",
-                            "confirmationRequired": false,
-                            "elicitationRequired": false
-                        }
-                    ]
-                },
-                {
-                    "name": "closeIntent",
-                    "confirmationRequired": false,
-                    "prompts": {},
-                    "slots": [
-                        {
-                            "name": "Device",
-                            "type": "LIST_OF_DEVICES",
-                            "confirmationRequired": false,
-                            "elicitationRequired": false
-                        }
-                    ]
-                },
-                {
-                    "name": "modeIntent",
-                    "confirmationRequired": false,
-                    "prompts": {},
-                    "slots": [
-                        {
-                            "name": "Device",
-                            "type": "LIST_OF_DEVICES",
-                            "confirmationRequired": false,
-                            "elicitationRequired": true,
-                            "prompts": {
-                                "elicitation": "modeIntent.Elicit.Slot.Device"
-                            }
-                        },
-                        {
-                            "name": "Mode",
-                            "type": "LIST_OF_MODES",
-                            "confirmationRequired": false,
-                            "elicitationRequired": true,
-                            "prompts": {
-                                "elicitation": "modeIntent.Elicit.Slot.Mode"
-                            }
-                        },
-                        {
-                            "name": "Grade",
-                            "type": "LIST_OF_GRADES",
-                            "confirmationRequired": false,
-                            "elicitationRequired": true,
-                            "prompts": {
-                                "elicitation": "modeIntent.Elicit.Slot.Grade"
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        "prompts": [
-            {
-                "id": "modeIntent.Elicit.Slot.Device",
-                "variations": [
-                    {
-                        "type": "PlainText",
-                        "value": "Which device do you want to control?"
-                    }
-                ]
-            },
-            {
-                "id": "modeIntent.Elicit.Slot.Mode",
-                "variations": [
-                    {
-                        "type": "PlainText",
-                        "value": "What properties do you want to set for {Device}?"
-                    }
-                ]
-            },
-            {
-                "id": "modeIntent.Elicit.Slot.Grade",
-                "variations": [
-                    {
-                        "type": "PlainText",
-                        "value": "What do you want to set the {Mode} of the {Device}?"
-                    }
-                ]
-            }
-        ]
+        }
     }
 }
