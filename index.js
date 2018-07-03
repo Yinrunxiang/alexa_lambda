@@ -41,7 +41,7 @@ MinecraftHelper.prototype = Object.create(AlexaSkill.prototype);
 MinecraftHelper.prototype.constructor = MinecraftHelper;
 
 MinecraftHelper.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-    var speechText = "Welcome to use G4 voice control, you can say open or close device to control";
+    var speechText = "Welcome to use G4 voice control, you can say turn on  or turn off device to control";
     // If the user either does not reply to the welcome message or says something that is not
     // understood, they will be prompted again with this text.
     var repromptText = "For instructions on what you can say, please say help me.";
@@ -57,7 +57,7 @@ MinecraftHelper.prototype.intentHandlers = {
         }
 
         var cardTitle = "Device for " + itemName,
-        device = itemName,
+            device = itemName,
             recipe = "ok",
             speechOutput,
             repromptOutput, token;
@@ -66,7 +66,7 @@ MinecraftHelper.prototype.intentHandlers = {
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
         var token = session.user.accessToken
-        response.openDevice(speechOutput, cardTitle, recipe, token,device);
+        response.openDevice(speechOutput, cardTitle, recipe, token, device);
     },
     "closeIntent": function (intent, session, response) {
         var itemSlot = intent.slots.Device,
@@ -76,7 +76,7 @@ MinecraftHelper.prototype.intentHandlers = {
         }
 
         var cardTitle = "Device for " + itemName,
-        device = itemName,
+            device = itemName,
             recipe = "ok",
             speechOutput,
             repromptOutput;
@@ -86,7 +86,63 @@ MinecraftHelper.prototype.intentHandlers = {
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
         var token = session.user.accessToken
-        response.closeDevice(speechOutput, cardTitle, recipe, token,device);
+        response.closeDevice(speechOutput, cardTitle, recipe, token, device);
+
+    },
+    "closeIntent": function (intent, session, response) {
+        var itemSlot = intent.slots.Device,
+            itemName;
+        if (itemSlot && itemSlot.value) {
+            itemName = itemSlot.value.toLowerCase();
+        }
+
+        var cardTitle = "Device for " + itemName,
+            device = itemName,
+            recipe = "ok",
+            speechOutput,
+            repromptOutput;
+
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        var token = session.user.accessToken
+        response.closeDevice(speechOutput, cardTitle, recipe, token, device);
+
+    },
+    "modeIntent": function (intent, session, response) {
+        var deviceObj = intent.slots.Device,
+            modeObj = intent.slots.Mode,
+            gradeObj = intent.slots.Grade,
+            device = "",
+            mode = "",
+            grade = ""
+        if (deviceObj && deviceObj.value) {
+            device = deviceObj.value.toLowerCase();
+        }
+        if (modeObj && modeObj.value) {
+            mode = modeObj.value.toLowerCase();
+        }
+        if (gradeObj && gradeObj.value) {
+            grade = gradeObj.value.toLowerCase();
+        }
+
+        var cardTitle = "Device for " + device,
+            mode = {
+                device: device,
+                mode: mode,
+                grade: grade,
+            },
+            recipe = "ok",
+            speechOutput,
+            repromptOutput;
+
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        var token = session.user.accessToken
+        response.modeDevice(speechOutput, cardTitle, recipe, token, mode);
 
     },
     // "closeIntent": function (intent, session,context, response) {
@@ -142,8 +198,8 @@ MinecraftHelper.prototype.intentHandlers = {
     },
 
     "AMAZON.HelpIntent": function (intent, session, response) {
-        var speechText = "You can tell G Four open or close device, or you can say exit";
-        var repromptText = "You can tell G Four open or close device, or you can say exit";
+        var speechText = "You can tell G Four turn on or turn off device, or you can say exit";
+        var repromptText = "You can tell G Four turn on or turn off device, or you can say exit";
         var speechOutput = {
             speech: speechText,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
@@ -155,8 +211,8 @@ MinecraftHelper.prototype.intentHandlers = {
         response.ask(speechOutput, repromptOutput);
     },
     "AMAZON.FallbackIntent": function (intent, session, response) {
-        var speechText = "You can tell G Four open or close device, or you can say exit";
-        var repromptText = "You can tell G Four open or close device, or you can say exit";
+        var speechText = "You can tell G Four turn on or turn off device, or you can say exit";
+        var repromptText = "You can tell G Four turn on or turn off device, or you can say exit";
         var speechOutput = {
             speech: speechText,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT

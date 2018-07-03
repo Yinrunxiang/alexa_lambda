@@ -12,10 +12,18 @@
                         }
                     ],
                     "samples": [
+                        "open {Device}",
+                        "turn on {Device}",
+                        "open the {Device}",
+                        "turn on the {Device}",
+                        "play {Device}",
+                        "play the {Device}",
                         "open {Device} {Device} {Device}",
                         "turn on {Device} {Device} {Device}",
                         "open the {Device} {Device} {Device}",
-                        "turn on the {Device} {Device} {Device}"
+                        "turn on the {Device} {Device} {Device}",
+                        "play {Device} {Device} {Device}",
+                        "play the {Device} {Device} {Device}"
                     ]
                 },
                 {
@@ -27,33 +35,186 @@
                         }
                     ],
                     "samples": [
+                        "close {Device}",
+                        "turn off {Device}",
+                        "close the {Device}",
+                        "turn off the {Device}",
+                        "stop {Device}",
+                        "stop the {Device}",
                         "close {Device} {Device} {Device}",
                         "turn off {Device} {Device} {Device}",
                         "close the {Device} {Device} {Device}",
-                        "turn off the {Device} {Device} {Device}"
+                        "turn off the {Device} {Device} {Device}",
+                        "stop {Device} {Device} {Device}",
+                        "stop the {Device} {Device} {Device}"
                     ]
                 },
                 {
-                    "name": "modeIntent",
+                    "name": "acModeIntent",
                     "slots": [
                         {
                             "name": "Device",
                             "type": "LIST_OF_DEVICES"
                         },
                         {
-                            "name": "Mode",
-                            "type": "LIST_OF_MODES"
-                        },
-                        {
                             "name": "Grade",
-                            "type": "LIST_OF_GRADES"
+                            "type": "AC_Mode_Grades"
                         }
                     ],
                     "samples": [
-                        "set {Device} {Device} {Device} {Mode} to {Grade}",
-                        "set {Device} {Device} {Device} to {Grade} {Grade}",
-                        "set the {Device} {Device} {Device} {Mode} to {Grade} {Grade}",
-                        "set the {Device} {Device} {Device} to {Grade} {Grade}"
+                        "set {Device} mode to {Grade}",
+                        "set the {Device} {Device} {Device} mode to {Grade}",
+                        "set {Device} to {Grade} mode",
+                        "set the {Device} {Device} {Device} to {Grade} mode",
+                        "set {Device} mode {Grade}",
+                        "set the {Device} {Device} {Device} mode {Grade}",
+                        "change {Device} mode to {Grade}",
+                        "change the {Device} {Device} {Device} mode to {Grade}",
+                        "change {Device} to {Grade} mode",
+                        "change the {Device} {Device} {Device} to {Grade} mode",
+                        "change {Device} mode {Grade}",
+                        "change the {Device} {Device} {Device} mode {Grade}"
+                    ]
+                },
+                {
+                    "name": "acTemperatureIntent",
+                    "slots": [
+                        {
+                            "name": "Device",
+                            "type": "LIST_OF_DEVICES"
+                        },
+                        {
+                            "name": "Grade",
+                            "type": "AC_Temperature_Grades"
+                        }
+                    ],
+                    "samples": [
+                        "set {Device} temperature to {Grade} degree",
+                        "set the {Device} {Device} {Device} temperature to {Grade} degree",
+                        "set {Device} to {Grade} degree",
+                        "set the {Device} {Device} {Device} to {Grade} degree"
+                    ]
+                },
+                {
+                    "name": "acWindIntent",
+                    "slots": [
+                        {
+                            "name": "Device",
+                            "type": "LIST_OF_DEVICES"
+                        },
+                        {
+                            "name": "Grade",
+                            "type": "AC_Wind_Grades"
+                        }
+                    ],
+                    "samples": [
+                        "set {Device} wind speed to {Grade}",
+                        "set the {Device} {Device} {Device} wind speed to {Grade}",
+                        "set {Device} to {Grade}",
+                        "set the {Device} {Device} {Device} to {Grade}"
+                    ]
+                },
+                {
+                    "name": "lightBrightnessIntent",
+                    "slots": [
+                        {
+                            "name": "Device",
+                            "type": "LIST_OF_DEVICES"
+                        },
+                        {
+                            "name": "Grade",
+                            "type": "Light_Brightness_Grades"
+                        }
+                    ],
+                    "samples": [
+                        "set {Device} Brightness to {Grade} percent",
+                        "set the {Device} {Device} {Device} Brightness to {Grade} percent",
+                        "set {Device} to {Grade} percent",
+                        "set the {Device} {Device} {Device} to {Grade} percent",
+                        "change {Device} Brightness to {Grade} percent",
+                        "change the {Device} {Device} {Device} Brightness to {Grade} percent",
+                        "change {Device} to {Grade} percent",
+                        "change the {Device} {Device} {Device} to {Grade} percent"
+                    ]
+                },
+                {
+                    "name": "LedColorIntent",
+                    "slots": [
+                        {
+                            "name": "Device",
+                            "type": "LIST_OF_DEVICES"
+                        },
+                        {
+                            "name": "Grade",
+                            "type": "Led_Color_Grades"
+                        }
+                    ],
+                    "samples": [
+                        "set {Device} Color to {Grade}",
+                        "set the {Device} {Device} {Device} Color to {Grade}",
+                        "set {Device} to {Grade}",
+                        "set the {Device} {Device} {Device} to {Grade}",
+                        "change {Device} Color to {Grade}",
+                        "change the {Device} {Device} {Device} Color to {Grade}",
+                        "change {Device} to {Grade}",
+                        "change the {Device} {Device} {Device} to {Grade}"
+                    ]
+                },
+                {
+                    "name": "MusicNextIntent",
+                    "slots": [
+                        {
+                            "name": "Device",
+                            "type": "LIST_OF_DEVICES"
+                        }
+                    ],
+                    "samples": [
+                        "set {Device} to next one",
+                        "set the {Device} {Device} {Device} to next one",
+                        "set {Device} to next song",
+                        "set the {Device} {Device} {Device} to next song",
+                        "change {Device} to next one",
+                        "change the {Device} {Device} {Device} to next one",
+                        "change {Device} to next song",
+                        "change the {Device} {Device} {Device} to next song"
+                    ]
+                },
+                {
+                    "name": "MusicNextIntent",
+                    "slots": [
+                        {
+                            "name": "Device",
+                            "type": "LIST_OF_DEVICES"
+                        }
+                    ],
+                    "samples": [
+                        "set {Device} to previous one",
+                        "set the {Device} {Device} {Device} to previous one",
+                        "set {Device} to previous song",
+                        "set the {Device} {Device} {Device} to previous song",
+                        "change {Device} to previous one",
+                        "change the {Device} {Device} {Device} to previous one",
+                        "change {Device} to previous song",
+                        "change the {Device} {Device} {Device} to previous song"
+                    ]
+                },
+                {
+                    "name": "MusicVolumeIntent",
+                    "slots": [
+                        {
+                            "name": "Device",
+                            "type": "LIST_OF_DEVICES"
+                        },
+                        {
+                            "name": "Grade",
+                            "type": "Music_Volume_Grades"
+                        }
+                    ],
+                    "samples": [
+                        "set {Device} volume to {Grade} percent",
+                        "set the {Device} {Device} {Device} volume to {Grade} percent",
+                        "change {Device} volume to {Grade} percent",
+                        "change the {Device} {Device} {Device} volume to {Grade} percent"
                     ]
                 },
                 {
@@ -187,7 +348,32 @@
                     ]
                 },
                 {
-                    "name": "LIST_OF_GRADES",
+                    "name": "AC_Mode_Grades",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "cool"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "heat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "auto"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wind"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AC_Wind_Grades",
                     "values": [
                         {
                             "name": {
@@ -196,110 +382,69 @@
                         },
                         {
                             "name": {
-                                "value": "medium"
+                                "value": "low"
                             }
                         },
                         {
                             "name": {
-                                "value": "low"
+                                "value": "medium"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AC_Temperature_Grades",
+                    "values": []
+                },
+                {
+                    "name": "Light_Brightness_Grades",
+                    "values": []
+                },
+                {
+                    "name": "Music_Volume_Grades",
+                    "values": []
+                },
+                {
+                    "name": "Led_Color_Grades",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "red"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "orange"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yellow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "green"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cyan"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blue"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "purple"
                             }
                         }
                     ]
                 }
             ]
-        },
-        "dialog": {
-            "intents": [
-                {
-                    "name": "openIntent",
-                    "confirmationRequired": false,
-                    "prompts": {},
-                    "slots": [
-                        {
-                            "name": "Device",
-                            "type": "LIST_OF_DEVICES",
-                            "confirmationRequired": false,
-                            "elicitationRequired": false
-                        }
-                    ]
-                },
-                {
-                    "name": "closeIntent",
-                    "confirmationRequired": false,
-                    "prompts": {},
-                    "slots": [
-                        {
-                            "name": "Device",
-                            "type": "LIST_OF_DEVICES",
-                            "confirmationRequired": false,
-                            "elicitationRequired": false
-                        }
-                    ]
-                },
-                {
-                    "name": "modeIntent",
-                    "confirmationRequired": false,
-                    "prompts": {},
-                    "slots": [
-                        {
-                            "name": "Device",
-                            "type": "LIST_OF_DEVICES",
-                            "confirmationRequired": false,
-                            "elicitationRequired": true,
-                            "prompts": {
-                                "elicitation": "modeIntent.Elicit.Slot.Device"
-                            }
-                        },
-                        {
-                            "name": "Mode",
-                            "type": "LIST_OF_MODES",
-                            "confirmationRequired": false,
-                            "elicitationRequired": true,
-                            "prompts": {
-                                "elicitation": "modeIntent.Elicit.Slot.Mode"
-                            }
-                        },
-                        {
-                            "name": "Grade",
-                            "type": "LIST_OF_GRADES",
-                            "confirmationRequired": false,
-                            "elicitationRequired": true,
-                            "prompts": {
-                                "elicitation": "modeIntent.Elicit.Slot.Grade"
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        "prompts": [
-            {
-                "id": "modeIntent.Elicit.Slot.Device",
-                "variations": [
-                    {
-                        "type": "PlainText",
-                        "value": "Which device do you want to control?"
-                    }
-                ]
-            },
-            {
-                "id": "modeIntent.Elicit.Slot.Mode",
-                "variations": [
-                    {
-                        "type": "PlainText",
-                        "value": "What properties do you want to set for {Device}?"
-                    }
-                ]
-            },
-            {
-                "id": "modeIntent.Elicit.Slot.Grade",
-                "variations": [
-                    {
-                        "type": "PlainText",
-                        "value": "What do you want to set the {Mode} of the {Device}?"
-                    }
-                ]
-            }
-        ]
+        }
     }
 }

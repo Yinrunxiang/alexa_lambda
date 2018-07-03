@@ -173,6 +173,8 @@ Response.prototype = (function () {
             var socketObj = {
                 intent: 'open',
                 device: device,
+                mode: "",
+                grade: "",
                 token: token
             }
             socket.send(JSON.stringify(socketObj))
@@ -203,6 +205,39 @@ Response.prototype = (function () {
             var socketObj = {
                 intent: 'close',
                 device: device,
+                mode: "",
+                grade: "",
+                token: token
+            }
+            socket.send(JSON.stringify(socketObj))
+            this._context.succeed(alexaData);
+            // var data = {
+            //     access_token: token
+            // }
+            // api.post('https://yinrunxiang.cn/alexa/oauth2_server/resource.php', data, function (data) {
+            //     var user_id = data
+            //     var socketObj = {
+            //         intent: 'close',
+            //         token: user_id
+            //     }
+            //     socket.send(JSON.stringify(socketObj))
+
+            // })
+            // this._context.succeed(alexaData);
+        },
+        modeDevice: function (speechOutput, cardTitle, cardContent, token,device) {
+            var alexaData = buildSpeechletResponse({
+                session: this._session,
+                output: speechOutput,
+                cardTitle: cardTitle,
+                cardContent: cardContent,
+                shouldEndSession: false
+            })
+            var socketObj = {
+                intent: 'mode',
+                device: device.device,
+                mode: device.mode,
+                grade: device.grade,
                 token: token
             }
             socket.send(JSON.stringify(socketObj))
