@@ -110,28 +110,25 @@ MinecraftHelper.prototype.intentHandlers = {
         response.closeDevice(speechOutput, cardTitle, recipe, token, device);
 
     },
-    "modeIntent": function (intent, session, response) {
+    "acModeIntent": function (intent, session, response) {
         var deviceObj = intent.slots.Device,
-            modeObj = intent.slots.Mode,
             gradeObj = intent.slots.Grade,
             device = "",
-            mode = "",
             grade = ""
         if (deviceObj && deviceObj.value) {
             device = deviceObj.value.toLowerCase();
-        }
-        if (modeObj && modeObj.value) {
-            mode = modeObj.value.toLowerCase();
         }
         if (gradeObj && gradeObj.value) {
             grade = gradeObj.value.toLowerCase();
         }
 
         var cardTitle = "Device for " + device,
-            mode = {
+            operation = {
                 device: device,
-                mode: mode,
                 grade: grade,
+                intent: 'acMode',
+                devicetype: 'ac',
+                type: 'mode'
             },
             recipe = "ok",
             speechOutput,
@@ -142,46 +139,201 @@ MinecraftHelper.prototype.intentHandlers = {
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
         var token = session.user.accessToken
-        response.modeDevice(speechOutput, cardTitle, recipe, token, mode);
+        response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
 
     },
-    // "closeIntent": function (intent, session,context, response) {
-    //     var itemSlot = intent.slots.Device,
-    //         itemName;
-    //     if (itemSlot && itemSlot.value){
-    //         itemName = itemSlot.value.toLowerCase();
-    //     }
+    "acTemperatureIntent": function (intent, session, response) {
+        var deviceObj = intent.slots.Device,
+            gradeObj = intent.slots.Grade,
+            device = "",
+            grade = ""
+        if (deviceObj && deviceObj.value) {
+            device = deviceObj.value.toLowerCase();
+        }
+        if (gradeObj && gradeObj.value) {
+            grade = gradeObj.value.toLowerCase();
+        }
 
-    //     var cardTitle = "Device for " + itemName,
-    //         recipe = recipes[itemName],
-    //         speechOutput,
-    //         repromptOutput;
-    //     if (recipe) {
-    //         speechOutput = {
-    //             speech: recipe,
-    //             type: AlexaSkill.speechOutputType.PLAIN_TEXT
-    //         };
-    //         var token = session.user.accessToken
-    //         response.openDevice(speechOutput, cardTitle, recipe,token);
-    //     } else {
-    //         var speech;
-    //         if (itemName) {
-    //             speech = "I'm sorry, I currently do not know the device for " + itemName + ". What else can I help with?";
-    //         } else {
-    //             speech = "I'm sorry, I currently do not know that device. What else can I help with?";
-    //         }
-    //         speechOutput = {
-    //             speech: speech,
-    //             type: AlexaSkill.speechOutputType.PLAIN_TEXT
-    //         };
-    //         repromptOutput = {
-    //             speech: "What else can I help with?",
-    //             type: AlexaSkill.speechOutputType.PLAIN_TEXT
-    //         };
-    //         response.ask(speechOutput, repromptOutput);
-    //     }
-    // },
+        var cardTitle = "Device for " + device,
+            operation = {
+                device: device,
+                grade: grade,
+                intent: 'acTemperature',
+                devicetype: 'ac',
+                type: 'temperature'
+            },
+            recipe = "ok",
+            speechOutput,
+            repromptOutput;
 
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        var token = session.user.accessToken
+        response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
+
+    },
+    "acWindIntent": function (intent, session, response) {
+        var deviceObj = intent.slots.Device,
+            gradeObj = intent.slots.Grade,
+            device = "",
+            grade = ""
+        if (deviceObj && deviceObj.value) {
+            device = deviceObj.value.toLowerCase();
+        }
+        if (gradeObj && gradeObj.value) {
+            grade = gradeObj.value.toLowerCase();
+        }
+
+        var cardTitle = "Device for " + device,
+            operation = {
+                device: device,
+                grade: grade,
+                intent: 'acWind',
+                devicetype: 'ac',
+                type: 'wind'
+            },
+            recipe = "ok",
+            speechOutput,
+            repromptOutput;
+
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        var token = session.user.accessToken
+        response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
+
+    },
+    "lightBrightnessIntent": function (intent, session, response) {
+        var deviceObj = intent.slots.Device,
+            gradeObj = intent.slots.Grade,
+            device = "",
+            grade = ""
+        if (deviceObj && deviceObj.value) {
+            device = deviceObj.value.toLowerCase();
+        }
+        if (gradeObj && gradeObj.value) {
+            grade = gradeObj.value.toLowerCase();
+        }
+
+        var cardTitle = "Device for " + device,
+            operation = {
+                device: device,
+                grade: grade,
+                intent: 'lightBrightness',
+                devicetype: 'light',
+                type: 'brightness'
+            },
+            recipe = "ok",
+            speechOutput,
+            repromptOutput;
+
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        var token = session.user.accessToken
+        response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
+
+    },
+    "ledColorIntent": function (intent, session, response) {
+        var deviceObj = intent.slots.Device,
+            gradeObj = intent.slots.Grade,
+            device = "",
+            grade = ""
+        if (deviceObj && deviceObj.value) {
+            device = deviceObj.value.toLowerCase();
+        }
+        if (gradeObj && gradeObj.value) {
+            grade = gradeObj.value.toLowerCase();
+        }
+
+        var cardTitle = "Device for " + device,
+            operation = {
+                device: device,
+                grade: grade,
+                intent: 'ledColor',
+                devicetype: 'led',
+                type: 'color'
+            },
+            recipe = "ok",
+            speechOutput,
+            repromptOutput;
+
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        var token = session.user.accessToken
+        response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
+
+    },
+    "musicNextIntent": function (intent, session, response) {
+        var deviceObj = intent.slots.Device,
+            gradeObj = intent.slots.Grade,
+            device = "",
+            grade = ""
+        if (deviceObj && deviceObj.value) {
+            device = deviceObj.value.toLowerCase();
+        }
+        if (gradeObj && gradeObj.value) {
+            grade = gradeObj.value.toLowerCase();
+        }
+
+        var cardTitle = "Device for " + device,
+            operation = {
+                device: device,
+                grade: grade,
+                intent: 'musicNext',
+                devicetype: 'music',
+                type: 'next'
+            },
+            recipe = "ok",
+            speechOutput,
+            repromptOutput;
+
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        var token = session.user.accessToken
+        response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
+
+    },
+    "musicPreviousIntent": function (intent, session, response) {
+        var deviceObj = intent.slots.Device,
+            gradeObj = intent.slots.Grade,
+            device = "",
+            grade = ""
+        if (deviceObj && deviceObj.value) {
+            device = deviceObj.value.toLowerCase();
+        }
+        if (gradeObj && gradeObj.value) {
+            grade = gradeObj.value.toLowerCase();
+        }
+
+        var cardTitle = "Device for " + device,
+            operation = {
+                device: device,
+                grade: grade,
+                intent: 'musicPrevious',
+                devicetype: 'music',
+                type: 'previous'
+            },
+            recipe = "ok",
+            speechOutput,
+            repromptOutput;
+
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+        var token = session.user.accessToken
+        response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
+
+    },
     "AMAZON.StopIntent": function (intent, session, response) {
         var speechOutput = "Goodbye";
         response.tell(speechOutput);
