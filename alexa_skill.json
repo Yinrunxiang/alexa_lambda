@@ -50,114 +50,124 @@
                     ]
                 },
                 {
-                    "name": "acModeIntent",
+                    "name": "modeIntent",
                     "slots": [
                         {
                             "name": "Device",
                             "type": "LIST_OF_DEVICES"
                         },
                         {
-                            "name": "Grade",
-                            "type": "AC_Mode_Grades"
+                            "name": "ModeGrade",
+                            "type": "ModeGradeList"
                         }
                     ],
                     "samples": [
-                        "set {Device} mode to {Grade}",
-                        "set the {Device} {Device} {Device} mode to {Grade}",
-                        "set {Device} to {Grade} mode",
-                        "set the {Device} {Device} {Device} to {Grade} mode",
-                        "set {Device} mode {Grade}",
-                        "set the {Device} {Device} {Device} mode {Grade}",
-                        "change {Device} mode to {Grade}",
-                        "change the {Device} {Device} {Device} mode to {Grade}",
-                        "change {Device} to {Grade} mode",
-                        "change the {Device} {Device} {Device} to {Grade} mode",
-                        "change {Device} mode {Grade}",
-                        "change the {Device} {Device} {Device} mode {Grade}"
+                        "set {Device} mode to {ModeGrade}",
+                        "set the {Device} {Device} {Device} mode to {ModeGrade}",
+                        "set {Device} to {ModeGrade} mode",
+                        "set the {Device} {Device} {Device} to {ModeGrade} mode",
+                        "set {Device} mode {ModeGrade}",
+                        "set the {Device} {Device} {Device} mode {ModeGrade}",
+                        "change {Device} mode to {ModeGrade}",
+                        "change the {Device} {Device} {Device} mode to {ModeGrade}",
+                        "change {Device} to {ModeGrade} mode",
+                        "change the {Device} {Device} {Device} to {ModeGrade} mode",
+                        "change {Device} mode {ModeGrade}",
+                        "change the {Device} {Device} {Device} mode {ModeGrade}"
                     ]
                 },
                 {
-                    "name": "acTemperatureIntent",
+                    "name": "temperatureIntent",
                     "slots": [
                         {
                             "name": "Device",
                             "type": "LIST_OF_DEVICES"
                         },
                         {
-                            "name": "Grade",
-                            "type": "AC_Temperature_Grades"
+                            "name": "TemperatureGrade",
+                            "type": "TemperatureGradeList"
                         }
                     ],
                     "samples": [
-                        "set {Device} temperature to {Grade} degree",
-                        "set the {Device} {Device} {Device} temperature to {Grade} degree",
-                        "set {Device} to {Grade} degree",
-                        "set the {Device} {Device} {Device} to {Grade} degree"
+                        "set {Device} temperature to {TemperatureGrade} degree",
+                        "set the {Device} {Device} {Device} temperature to {TemperatureGrade} degree",
+                        "set {Device} to {TemperatureGrade} degree",
+                        "set the {Device} {Device} {Device} to {TemperatureGrade} degree",
+                        "change {Device} temperature to {TemperatureGrade} degree",
+                        "change the {Device} {Device} {Device} temperature to {TemperatureGrade} degree",
+                        "change {Device} to {TemperatureGrade} degree",
+                        "change the {Device} {Device} {Device} to {TemperatureGrade} degree"
                     ]
                 },
                 {
-                    "name": "acWindIntent",
+                    "name": "windIntent",
                     "slots": [
                         {
                             "name": "Device",
                             "type": "LIST_OF_DEVICES"
                         },
                         {
-                            "name": "Grade",
-                            "type": "AC_Wind_Grades"
+                            "name": "WindGrade",
+                            "type": "WindGradeList"
                         }
                     ],
                     "samples": [
-                        "set {Device} wind speed to {Grade}",
-                        "set the {Device} {Device} {Device} wind speed to {Grade}",
-                        "set {Device} to {Grade}",
-                        "set the {Device} {Device} {Device} to {Grade}"
+                        "set {Device} wind speed to {WindGrade}",
+                        "set the {Device} {Device} {Device} wind speed to {WindGrade}",
+                        "set {Device} to {WindGrade}",
+                        "set the {Device} {Device} {Device} to {WindGrade}",
+                        "change {Device} wind speed to {WindGrade}",
+                        "change the {Device} {Device} {Device} wind speed to {WindGrade}",
+                        "change {Device} to {WindGrade}",
+                        "change the {Device} {Device} {Device} to {WindGrade}"
                     ]
                 },
                 {
-                    "name": "lightBrightnessIntent",
+                    "name": "brightnessIntent",
                     "slots": [
                         {
                             "name": "Device",
                             "type": "LIST_OF_DEVICES"
                         },
                         {
-                            "name": "Grade",
-                            "type": "Light_Brightness_Grades"
+                            "name": "BrightnessGrade",
+                            "type": "BrightnessGradeList"
                         }
                     ],
                     "samples": [
-                        "set {Device} Brightness to {Grade} percent",
-                        "set the {Device} {Device} {Device} Brightness to {Grade} percent",
-                        "set {Device} to {Grade} percent",
-                        "set the {Device} {Device} {Device} to {Grade} percent",
-                        "change {Device} Brightness to {Grade} percent",
-                        "change the {Device} {Device} {Device} Brightness to {Grade} percent",
-                        "change {Device} to {Grade} percent",
-                        "change the {Device} {Device} {Device} to {Grade} percent"
+                        "set {Device} Brightness to {BrightnessGrade} percent",
+                        "set the {Device} {Device} {Device} Brightness to {BrightnessGrade} percent",
+                        "set {Device} to {BrightnessGrade} percent",
+                        "set the {Device} {Device} {Device} to {BrightnessGrade} percent",
+                        "change {Device} Brightness to {BrightnessGrade} percent",
+                        "change the {Device} {Device} {Device} Brightness to {BrightnessGrade} percent",
+                        "change {Device} to {BrightnessGrade} percent",
+                        "change the {Device} {Device} {Device} to {BrightnessGrade} percent"
                     ]
                 },
                 {
-                    "name": "ledColorIntent",
+                    "name": "colorIntent",
                     "slots": [
                         {
                             "name": "Device",
                             "type": "LIST_OF_DEVICES"
                         },
                         {
-                            "name": "Grade",
-                            "type": "Led_Color_Grades"
+                            "name": "ColorGrade",
+                            "type": "ColorGradeList"
                         }
                     ],
                     "samples": [
-                        "set {Device} Color to {Grade}",
-                        "set the {Device} {Device} {Device} Color to {Grade}",
-                        "set {Device} to {Grade}",
-                        "set the {Device} {Device} {Device} to {Grade}",
-                        "change {Device} Color to {Grade}",
-                        "change the {Device} {Device} {Device} Color to {Grade}",
-                        "change {Device} to {Grade}",
-                        "change the {Device} {Device} {Device} to {Grade}"
+                        "set {Device} Color to {ColorGrade}",
+                        "set the {Device} {Device} {Device} Color to {ColorGrade}",
+                        "set {Device} Color to {ColorGrade}",
+                        "set the {Device} {Device} {Device} Color to {ColorGrade}",
+                        "set {Device} to {ColorGrade}",
+                        "set the {Device} {Device} {Device} to {ColorGrade}",
+                        "change {Device} Color to {ColorGrade}",
+                        "change the {Device} {Device} {Device} Color to {ColorGrade}",
+                        "change {Device} to {ColorGrade}",
+                        "change the {Device} {Device} {Device} to {ColorGrade}"
                     ]
                 },
                 {
@@ -206,15 +216,15 @@
                             "type": "LIST_OF_DEVICES"
                         },
                         {
-                            "name": "Grade",
-                            "type": "Music_Volume_Grades"
+                            "name": "MusicVolumeGrade",
+                            "type": "MusicVolumeGradeList"
                         }
                     ],
                     "samples": [
-                        "set {Device} volume to {Grade} percent",
-                        "set the {Device} {Device} {Device} volume to {Grade} percent",
-                        "change {Device} volume to {Grade} percent",
-                        "change the {Device} {Device} {Device} volume to {Grade} percent"
+                        "set {Device} volume to {MusicVolumeGrade} percent",
+                        "set the {Device} {Device} {Device} volume to {MusicVolumeGrade} percent",
+                        "change {Device} volume to {MusicVolumeGrade} percent",
+                        "change the {Device} {Device} {Device} volume to {MusicVolumeGrade} percent"
                     ]
                 },
                 {
@@ -348,7 +358,7 @@
                     ]
                 },
                 {
-                    "name": "AC_Mode_Grades",
+                    "name": "ModeGradeList",
                     "values": [
                         {
                             "name": {
@@ -373,7 +383,7 @@
                     ]
                 },
                 {
-                    "name": "AC_Wind_Grades",
+                    "name": "WindGradeList",
                     "values": [
                         {
                             "name": {
@@ -393,19 +403,37 @@
                     ]
                 },
                 {
-                    "name": "AC_Temperature_Grades",
-                    "values": []
+                    "name": "TemperatureGradeList",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "ten"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "name": "Light_Brightness_Grades",
-                    "values": []
+                    "name": "BrightnessGradeList",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "ten"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "name": "Music_Volume_Grades",
-                    "values": []
+                    "name": "MusicVolumeGradeList",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "ten"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "name": "Led_Color_Grades",
+                    "name": "ColorGradeList",
                     "values": [
                         {
                             "name": {

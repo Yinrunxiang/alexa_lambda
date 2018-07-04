@@ -50,14 +50,20 @@ MinecraftHelper.prototype.eventHandlers.onLaunch = function (launchRequest, sess
 
 MinecraftHelper.prototype.intentHandlers = {
     "openIntent": function (intent, session, response) {
-        var itemSlot = intent.slots.Device,
-            itemName;
-        if (itemSlot && itemSlot.value) {
-            itemName = itemSlot.value.toLowerCase();
+        var deviceObj = intent.slots.Device,
+            device = ""
+        if (deviceObj && deviceObj.value) {
+            device = deviceObj.value.toLowerCase();
         }
-
-        var cardTitle = "Device for " + itemName,
-            device = itemName,
+        var token = session.user.accessToken
+        var cardTitle = "Device for " + device,
+            operation = {
+                device: device,
+                grade: grade,
+                mode: "",
+                token: token,
+                intent: 'open'
+            },
             recipe = "ok",
             speechOutput,
             repromptOutput, token;
@@ -65,70 +71,23 @@ MinecraftHelper.prototype.intentHandlers = {
             speech: recipe,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
-        var token = session.user.accessToken
-        response.openDevice(speechOutput, cardTitle, recipe, token, device);
+
+        response.openDevice(speechOutput, cardTitle, recipe, token, operation);
     },
     "closeIntent": function (intent, session, response) {
-        var itemSlot = intent.slots.Device,
-            itemName;
-        if (itemSlot && itemSlot.value) {
-            itemName = itemSlot.value.toLowerCase();
-        }
-
-        var cardTitle = "Device for " + itemName,
-            device = itemName,
-            recipe = "ok",
-            speechOutput,
-            repromptOutput;
-
-        speechOutput = {
-            speech: recipe,
-            type: AlexaSkill.speechOutputType.PLAIN_TEXT
-        };
-        var token = session.user.accessToken
-        response.closeDevice(speechOutput, cardTitle, recipe, token, device);
-
-    },
-    "closeIntent": function (intent, session, response) {
-        var itemSlot = intent.slots.Device,
-            itemName;
-        if (itemSlot && itemSlot.value) {
-            itemName = itemSlot.value.toLowerCase();
-        }
-
-        var cardTitle = "Device for " + itemName,
-            device = itemName,
-            recipe = "ok",
-            speechOutput,
-            repromptOutput;
-
-        speechOutput = {
-            speech: recipe,
-            type: AlexaSkill.speechOutputType.PLAIN_TEXT
-        };
-        var token = session.user.accessToken
-        response.closeDevice(speechOutput, cardTitle, recipe, token, device);
-
-    },
-    "acModeIntent": function (intent, session, response) {
         var deviceObj = intent.slots.Device,
-            gradeObj = intent.slots.Grade,
-            device = "",
-            grade = ""
+            device = ""
         if (deviceObj && deviceObj.value) {
             device = deviceObj.value.toLowerCase();
         }
-        if (gradeObj && gradeObj.value) {
-            grade = gradeObj.value.toLowerCase();
-        }
-
+        var token = session.user.accessToken
         var cardTitle = "Device for " + device,
             operation = {
                 device: device,
                 grade: grade,
-                intent: 'acMode',
-                devicetype: 'ac',
-                type: 'mode'
+                mode: "",
+                token: token,
+                intent: 'open'
             },
             recipe = "ok",
             speechOutput,
@@ -138,13 +97,45 @@ MinecraftHelper.prototype.intentHandlers = {
             speech: recipe,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
+
+        response.closeDevice(speechOutput, cardTitle, recipe, token, operation);
+
+    },
+    "modeIntent": function (intent, session, response) {
+        var deviceObj = intent.slots.Device,
+            gradeObj = intent.slots.ModeGrade,
+            device = "",
+            grade = ""
+        if (deviceObj && deviceObj.value) {
+            device = deviceObj.value.toLowerCase();
+        }
+        if (gradeObj && gradeObj.value) {
+            grade = gradeObj.value.toLowerCase();
+        }
         var token = session.user.accessToken
+        var cardTitle = "Device for " + device,
+            operation = {
+                device: device,
+                grade: grade,
+                mode: "",
+                token: token,
+                intent: 'mode'
+            },
+            recipe = "ok",
+            speechOutput,
+            repromptOutput;
+
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
+
         response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
 
     },
-    "acTemperatureIntent": function (intent, session, response) {
+    "temperatureIntent": function (intent, session, response) {
         var deviceObj = intent.slots.Device,
-            gradeObj = intent.slots.Grade,
+            gradeObj = intent.slots.TemperatureGrade,
             device = "",
             grade = ""
         if (deviceObj && deviceObj.value) {
@@ -153,14 +144,14 @@ MinecraftHelper.prototype.intentHandlers = {
         if (gradeObj && gradeObj.value) {
             grade = gradeObj.value.toLowerCase();
         }
-
+        var token = session.user.accessToken
         var cardTitle = "Device for " + device,
             operation = {
                 device: device,
                 grade: grade,
-                intent: 'acTemperature',
-                devicetype: 'ac',
-                type: 'temperature'
+                mode: "",
+                token: token,
+                intent: 'temperature'
             },
             recipe = "ok",
             speechOutput,
@@ -170,13 +161,12 @@ MinecraftHelper.prototype.intentHandlers = {
             speech: recipe,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
-        var token = session.user.accessToken
         response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
 
     },
-    "acWindIntent": function (intent, session, response) {
+    "windIntent": function (intent, session, response) {
         var deviceObj = intent.slots.Device,
-            gradeObj = intent.slots.Grade,
+            gradeObj = intent.slots.WindGrade,
             device = "",
             grade = ""
         if (deviceObj && deviceObj.value) {
@@ -185,14 +175,14 @@ MinecraftHelper.prototype.intentHandlers = {
         if (gradeObj && gradeObj.value) {
             grade = gradeObj.value.toLowerCase();
         }
-
+        var token = session.user.accessToken
         var cardTitle = "Device for " + device,
             operation = {
                 device: device,
                 grade: grade,
-                intent: 'acWind',
-                devicetype: 'ac',
-                type: 'wind'
+                mode: "",
+                token: token,
+                intent: 'wind'
             },
             recipe = "ok",
             speechOutput,
@@ -202,13 +192,12 @@ MinecraftHelper.prototype.intentHandlers = {
             speech: recipe,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
-        var token = session.user.accessToken
         response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
 
     },
-    "lightBrightnessIntent": function (intent, session, response) {
+    "brightnessIntent": function (intent, session, response) {
         var deviceObj = intent.slots.Device,
-            gradeObj = intent.slots.Grade,
+            gradeObj = intent.slots.BrightnessGrade,
             device = "",
             grade = ""
         if (deviceObj && deviceObj.value) {
@@ -217,14 +206,14 @@ MinecraftHelper.prototype.intentHandlers = {
         if (gradeObj && gradeObj.value) {
             grade = gradeObj.value.toLowerCase();
         }
-
+        var token = session.user.accessToken
         var cardTitle = "Device for " + device,
             operation = {
                 device: device,
                 grade: grade,
-                intent: 'lightBrightness',
-                devicetype: 'light',
-                type: 'brightness'
+                mode: "",
+                token: token,
+                intent: 'brightness'
             },
             recipe = "ok",
             speechOutput,
@@ -234,13 +223,12 @@ MinecraftHelper.prototype.intentHandlers = {
             speech: recipe,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
-        var token = session.user.accessToken
         response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
 
     },
-    "ledColorIntent": function (intent, session, response) {
+    "colorIntent": function (intent, session, response) {
         var deviceObj = intent.slots.Device,
-            gradeObj = intent.slots.Grade,
+            gradeObj = intent.slots.ColorGrade,
             device = "",
             grade = ""
         if (deviceObj && deviceObj.value) {
@@ -249,14 +237,14 @@ MinecraftHelper.prototype.intentHandlers = {
         if (gradeObj && gradeObj.value) {
             grade = gradeObj.value.toLowerCase();
         }
-
+        var token = session.user.accessToken
         var cardTitle = "Device for " + device,
             operation = {
                 device: device,
                 grade: grade,
-                intent: 'ledColor',
-                devicetype: 'led',
-                type: 'color'
+                mode: "",
+                token: token,
+                intent: 'color',
             },
             recipe = "ok",
             speechOutput,
@@ -266,29 +254,23 @@ MinecraftHelper.prototype.intentHandlers = {
             speech: recipe,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
-        var token = session.user.accessToken
         response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
 
     },
     "musicNextIntent": function (intent, session, response) {
         var deviceObj = intent.slots.Device,
-            gradeObj = intent.slots.Grade,
-            device = "",
-            grade = ""
+            device = ""
         if (deviceObj && deviceObj.value) {
             device = deviceObj.value.toLowerCase();
         }
-        if (gradeObj && gradeObj.value) {
-            grade = gradeObj.value.toLowerCase();
-        }
-
+        var token = session.user.accessToken
         var cardTitle = "Device for " + device,
             operation = {
                 device: device,
-                grade: grade,
+                grade: "",
+                mode: "",
+                token: token,
                 intent: 'musicNext',
-                devicetype: 'music',
-                type: 'next'
             },
             recipe = "ok",
             speechOutput,
@@ -298,29 +280,23 @@ MinecraftHelper.prototype.intentHandlers = {
             speech: recipe,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
-        var token = session.user.accessToken
         response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
 
     },
     "musicPreviousIntent": function (intent, session, response) {
         var deviceObj = intent.slots.Device,
-            gradeObj = intent.slots.Grade,
-            device = "",
-            grade = ""
+            device = ""
         if (deviceObj && deviceObj.value) {
             device = deviceObj.value.toLowerCase();
         }
-        if (gradeObj && gradeObj.value) {
-            grade = gradeObj.value.toLowerCase();
-        }
-
+        var token = session.user.accessToken
         var cardTitle = "Device for " + device,
             operation = {
                 device: device,
-                grade: grade,
+                grade: "",
+                mode: "",
+                token: token,
                 intent: 'musicPrevious',
-                devicetype: 'music',
-                type: 'previous'
             },
             recipe = "ok",
             speechOutput,
@@ -330,7 +306,37 @@ MinecraftHelper.prototype.intentHandlers = {
             speech: recipe,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
         };
+        response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
+
+    },
+    "musicVolumeIntent": function (intent, session, response) {
+        var deviceObj = intent.slots.Device,
+            gradeObj = intent.slots.MusicVolumeGrade,
+            device = "",
+            grade = ""
+        if (deviceObj && deviceObj.value) {
+            device = deviceObj.value.toLowerCase();
+        }
+        if (gradeObj && gradeObj.value) {
+            grade = gradeObj.value.toLowerCase();
+        }
         var token = session.user.accessToken
+        var cardTitle = "Device for " + device,
+            operation = {
+                device: device,
+                grade: grade,
+                mode: "",
+                token: token,
+                intent: 'musicVolume',
+            },
+            recipe = "ok",
+            speechOutput,
+            repromptOutput;
+
+        speechOutput = {
+            speech: recipe,
+            type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        };
         response.operationDevice(speechOutput, cardTitle, recipe, token, operation);
 
     },
