@@ -162,7 +162,7 @@ Response.prototype = (function () {
     };
 
     return {
-        openDevice: function (speechOutput, cardTitle, cardContent, token,device) {
+        openDevice: function (speechOutput, cardTitle, cardContent, token,operation) {
             var alexaData = buildSpeechletResponse({
                 session: this._session,
                 output: speechOutput,
@@ -170,14 +170,7 @@ Response.prototype = (function () {
                 cardContent: cardContent,
                 shouldEndSession: false
             })
-            var socketObj = {
-                intent: 'open',
-                device: device,
-                mode: "",
-                grade: "",
-                token: token
-            }
-            socket.send(JSON.stringify(socketObj))
+            socket.send(JSON.stringify(operation))
             this._context.succeed(alexaData);
             // var  data= {
             //     access_token: token
@@ -194,7 +187,7 @@ Response.prototype = (function () {
             // this._context.succeed(alexaData);
 
         },
-        closeDevice: function (speechOutput, cardTitle, cardContent, token,device) {
+        closeDevice: function (speechOutput, cardTitle, cardContent, token,operation) {
             var alexaData = buildSpeechletResponse({
                 session: this._session,
                 output: speechOutput,
@@ -202,14 +195,7 @@ Response.prototype = (function () {
                 cardContent: cardContent,
                 shouldEndSession: false
             })
-            var socketObj = {
-                intent: 'close',
-                device: device,
-                mode: "",
-                grade: "",
-                token: token
-            }
-            socket.send(JSON.stringify(socketObj))
+            socket.send(JSON.stringify(operation))
             this._context.succeed(alexaData);
             // var data = {
             //     access_token: token

@@ -12,10 +12,18 @@
                         }
                     ],
                     "samples": [
-                        "openIntent open {Device} {Device} {Device}",
-                        "openIntent turn on {Device} {Device} {Device}",
-                        "openIntent open the {Device} {Device} {Device}",
-                        "openIntent turn on the {Device} {Device} {Device}"
+                        "open {Device}",
+                        "turn on {Device}",
+                        "open the {Device}",
+                        "turn on the {Device}",
+                        "play {Device}",
+                        "play the {Device}",
+                        "open {Device} {Device} {Device}",
+                        "turn on {Device} {Device} {Device}",
+                        "open the {Device} {Device} {Device}",
+                        "turn on the {Device} {Device} {Device}",
+                        "play {Device} {Device} {Device}",
+                        "play the {Device} {Device} {Device}"
                     ]
                 },
                 {
@@ -27,10 +35,18 @@
                         }
                     ],
                     "samples": [
-                        "closeIntent close {Device} {Device} {Device}",
-                        "closeIntent turn off {Device} {Device} {Device}",
-                        "closeIntent close the {Device} {Device} {Device}",
-                        "closeIntent turn off the {Device} {Device} {Device}"
+                        "close {Device}",
+                        "turn off {Device}",
+                        "close the {Device}",
+                        "turn off the {Device}",
+                        "stop {Device}",
+                        "stop the {Device}",
+                        "close {Device} {Device} {Device}",
+                        "turn off {Device} {Device} {Device}",
+                        "close the {Device} {Device} {Device}",
+                        "turn off the {Device} {Device} {Device}",
+                        "stop {Device} {Device} {Device}",
+                        "stop the {Device} {Device} {Device}"
                     ]
                 },
                 {
@@ -50,8 +66,18 @@
                         }
                     ],
                     "samples": [
-                        "modeIntent Set the {Device} {Device} {Device} {Mode} to {Grade} {Grade}",
-                        "modeIntent Set the {Device} {Device} {Device} to {Grade} {Grade}"
+                        "set {Device} {Mode} to {Grade}",
+                        "set {Device} to {Grade}",
+                        "set the {Device} {Mode} to {Grade}",
+                        "set the {Device} to {Grade}",
+                        "set {Device} {Mode} to {Grade} degree",
+                        "set {Device} to {Grade} degree",
+                        "set the {Device} {Mode} to {Grade} degree",
+                        "set the {Device} to {Grade} degree",
+                        "set {Device} {Mode} to {Grade} percent",
+                        "set {Device} to {Grade} percent",
+                        "set the {Device} {Mode} to {Grade} percent",
+                        "set the {Device} to {Grade} percent"
                     ]
                 },
                 {

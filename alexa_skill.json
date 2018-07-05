@@ -89,6 +89,14 @@
                         }
                     ],
                     "samples": [
+                        "set {Device} temperature to {TemperatureGrade}",
+                        "set the {Device} {Device} {Device} temperature to {TemperatureGrade}",
+                        "set {Device} to {TemperatureGrade}",
+                        "set the {Device} {Device} {Device} to {TemperatureGrade}",
+                        "change {Device} temperature to {TemperatureGrade}",
+                        "change the {Device} {Device} {Device} temperature to {TemperatureGrade}",
+                        "change {Device} to {TemperatureGrade}",
+                        "change the {Device} {Device} {Device} to {TemperatureGrade}",
                         "set {Device} temperature to {TemperatureGrade} degree",
                         "set the {Device} {Device} {Device} temperature to {TemperatureGrade} degree",
                         "set {Device} to {TemperatureGrade} degree",
@@ -139,6 +147,10 @@
                         "set the {Device} {Device} {Device} Brightness to {BrightnessGrade} percent",
                         "set {Device} to {BrightnessGrade} percent",
                         "set the {Device} {Device} {Device} to {BrightnessGrade} percent",
+                        "dim {Device} Brightness to {BrightnessGrade} percent",
+                        "dim the {Device} {Device} {Device} Brightness to {BrightnessGrade} percent",
+                        "dim {Device} to {BrightnessGrade} percent",
+                        "dim the {Device} {Device} {Device} to {BrightnessGrade} percent",
                         "change {Device} Brightness to {BrightnessGrade} percent",
                         "change the {Device} {Device} {Device} Brightness to {BrightnessGrade} percent",
                         "change {Device} to {BrightnessGrade} percent",
@@ -158,15 +170,20 @@
                         }
                     ],
                     "samples": [
-                        "set {Device} Color to {ColorGrade}",
+                        "set {Device} color to {ColorGrade}",
+                        "set {Device} {Device} {Device} color to {ColorGrade}",
                         "set the {Device} {Device} {Device} Color to {ColorGrade}",
-                        "set {Device} Color to {ColorGrade}",
+                        "set {Device} color to {ColorGrade}",
+                        "set {Device} {Device} {Device} Color to {ColorGrade}",
                         "set the {Device} {Device} {Device} Color to {ColorGrade}",
                         "set {Device} to {ColorGrade}",
+                        "set {Device} {Device} {Device} to {ColorGrade}",
                         "set the {Device} {Device} {Device} to {ColorGrade}",
-                        "change {Device} Color to {ColorGrade}",
-                        "change the {Device} {Device} {Device} Color to {ColorGrade}",
+                        "change {Device} color to {ColorGrade}",
+                        "change {Device} {Device} {Device} color to {ColorGrade}",
+                        "change the {Device} {Device} {Device} color to {ColorGrade}",
                         "change {Device} to {ColorGrade}",
+                        "change {Device} {Device} {Device} to {ColorGrade}",
                         "change the {Device} {Device} {Device} to {ColorGrade}"
                     ]
                 },
@@ -367,6 +384,11 @@
                         },
                         {
                             "name": {
+                                "value": "cold"
+                            }
+                        },
+                        {
+                            "name": {
                                 "value": "heat"
                             }
                         },
@@ -378,6 +400,12 @@
                         {
                             "name": {
                                 "value": "wind"
+                            }
+                        }
+                        ,
+                        {
+                            "name": {
+                                "value": "fan"
                             }
                         }
                     ]
@@ -407,7 +435,257 @@
                     "values": [
                         {
                             "name": {
+                                "value": "zero"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nine"
+                            }
+                        },
+                        {
+                            "name": {
                                 "value": "ten"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eleven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twelve"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fourteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventeen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nineteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty"
                             }
                         }
                     ]
@@ -417,7 +695,507 @@
                     "values": [
                         {
                             "name": {
+                                "value": "zero"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nine"
+                            }
+                        },
+                        {
+                            "name": {
                                 "value": "ten"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eleven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twelve"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fourteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventeen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nineteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "one hundred"
                             }
                         }
                     ]
@@ -427,7 +1205,507 @@
                     "values": [
                         {
                             "name": {
+                                "value": "zero"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nine"
+                            }
+                        },
+                        {
+                            "name": {
                                 "value": "ten"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eleven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twelve"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fourteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventeen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nineteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fifty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventy-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighty-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ninety-nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "one hundred"
                             }
                         }
                     ]

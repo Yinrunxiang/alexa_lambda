@@ -59,7 +59,7 @@ MinecraftHelper.prototype.intentHandlers = {
         var cardTitle = "Device for " + device,
             operation = {
                 device: device,
-                grade: grade,
+                grade: "",
                 mode: "",
                 token: token,
                 intent: 'open'
@@ -84,10 +84,10 @@ MinecraftHelper.prototype.intentHandlers = {
         var cardTitle = "Device for " + device,
             operation = {
                 device: device,
-                grade: grade,
+                grade: "",
                 mode: "",
                 token: token,
-                intent: 'open'
+                intent: 'close'
             },
             recipe = "ok",
             speechOutput,
