@@ -12,17 +12,11 @@
                         }
                     ],
                     "samples": [
-                        "open {Device}",
-                        "turn on {Device}",
-                        "open the {Device}",
-                        "turn on the {Device}",
-                        "play {Device}",
-                        "play the {Device}",
                         "open {Device} {Device} {Device}",
                         "turn on {Device} {Device} {Device}",
+                        "play {Device} {Device} {Device}",
                         "open the {Device} {Device} {Device}",
                         "turn on the {Device} {Device} {Device}",
-                        "play {Device} {Device} {Device}",
                         "play the {Device} {Device} {Device}"
                     ]
                 },
@@ -85,7 +79,7 @@
                         },
                         {
                             "name": "TemperatureGrade",
-                            "type": "TemperatureGradeList"
+                            "type": "AMAZON.NUMBER"
                         }
                     ],
                     "samples": [
@@ -139,20 +133,16 @@
                         },
                         {
                             "name": "BrightnessGrade",
-                            "type": "BrightnessGradeList"
+                            "type": "AMAZON.NUMBER"
                         }
                     ],
                     "samples": [
-                        "set {Device} Brightness to {BrightnessGrade} percent",
-                        "set the {Device} {Device} {Device} Brightness to {BrightnessGrade} percent",
+                        "set {Device} brightness to {BrightnessGrade} percent",
+                        "set the {Device} {Device} {Device} brightness to {BrightnessGrade} percent",
                         "set {Device} to {BrightnessGrade} percent",
                         "set the {Device} {Device} {Device} to {BrightnessGrade} percent",
-                        "dim {Device} Brightness to {BrightnessGrade} percent",
-                        "dim the {Device} {Device} {Device} Brightness to {BrightnessGrade} percent",
-                        "dim {Device} to {BrightnessGrade} percent",
-                        "dim the {Device} {Device} {Device} to {BrightnessGrade} percent",
-                        "change {Device} Brightness to {BrightnessGrade} percent",
-                        "change the {Device} {Device} {Device} Brightness to {BrightnessGrade} percent",
+                        "change {Device} brightness to {BrightnessGrade} percent",
+                        "change the {Device} {Device} {Device} brightness to {BrightnessGrade} percent",
                         "change {Device} to {BrightnessGrade} percent",
                         "change the {Device} {Device} {Device} to {BrightnessGrade} percent"
                     ]
@@ -234,7 +224,7 @@
                         },
                         {
                             "name": "MusicVolumeGrade",
-                            "type": "MusicVolumeGradeList"
+                            "type": "AMAZON.NUMBER"
                         }
                     ],
                     "samples": [
