@@ -1,23 +1,23 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "g four",
+            "invocationName": "g test",
             "intents": [
                 {
                     "name": "openIntent",
                     "slots": [
                         {
                             "name": "Device",
-                            "type": "LIST_OF_DEVICES"
+                            "type": "AMAZON.DeviceType"
                         }
                     ],
                     "samples": [
                         "open {Device}",
                         "turn on {Device}",
                         "play {Device}",
-                        "open the {Device} {Device} {Device}",
-                        "turn on the {Device} {Device} {Device}",
-                        "play the {Device} {Device} {Device}"
+                        "open the {Device}",
+                        "turn on the {Device}",
+                        "play the {Device}"
                     ]
                 },
                 {
@@ -25,16 +25,16 @@
                     "slots": [
                         {
                             "name": "Device",
-                            "type": "LIST_OF_DEVICES"
+                            "type": "AMAZON.DeviceType"
                         }
                     ],
                     "samples": [
                         "close {Device}",
                         "turn off {Device}",
                         "stop {Device}",
-                        "close the {Device} {Device} {Device}",
-                        "turn off the {Device} {Device} {Device}",
-                        "stop the {Device} {Device} {Device}"
+                        "close the {Device}",
+                        "turn off the {Device}",
+                        "stop the {Device}"
                     ]
                 },
                 {
@@ -42,7 +42,7 @@
                     "slots": [
                         {
                             "name": "Device",
-                            "type": "LIST_OF_DEVICES"
+                            "type": "AMAZON.DeviceType"
                         },
                         {
                             "name": "ModeGrade",
@@ -51,17 +51,17 @@
                     ],
                     "samples": [
                         "set {Device} mode to {ModeGrade}",
-                        "set the {Device} {Device} {Device} mode to {ModeGrade}",
+                        "set the {Device} mode to {ModeGrade}",
                         "set {Device} to {ModeGrade} mode",
-                        "set the {Device} {Device} {Device} to {ModeGrade} mode",
+                        "set the {Device} to {ModeGrade} mode",
                         "set {Device} mode {ModeGrade}",
-                        "set the {Device} {Device} {Device} mode {ModeGrade}",
+                        "set the {Device} mode {ModeGrade}",
                         "change {Device} mode to {ModeGrade}",
-                        "change the {Device} {Device} {Device} mode to {ModeGrade}",
+                        "change the {Device} mode to {ModeGrade}",
                         "change {Device} to {ModeGrade} mode",
-                        "change the {Device} {Device} {Device} to {ModeGrade} mode",
+                        "change the {Device} to {ModeGrade} mode",
                         "change {Device} mode {ModeGrade}",
-                        "change the {Device} {Device} {Device} mode {ModeGrade}"
+                        "change the {Device} mode {ModeGrade}"
                     ]
                 },
                 {
@@ -69,7 +69,7 @@
                     "slots": [
                         {
                             "name": "Device",
-                            "type": "LIST_OF_DEVICES"
+                            "type": "AMAZON.DeviceType"
                         },
                         {
                             "name": "TemperatureGrade",
@@ -78,21 +78,21 @@
                     ],
                     "samples": [
                         "set {Device} temperature to {TemperatureGrade}",
-                        "set the {Device} {Device} {Device} temperature to {TemperatureGrade}",
+                        "set the {Device} temperature to {TemperatureGrade}",
                         "set {Device} to {TemperatureGrade}",
-                        "set the {Device} {Device} {Device} to {TemperatureGrade}",
+                        "set the {Device} to {TemperatureGrade}",
                         "change {Device} temperature to {TemperatureGrade}",
-                        "change the {Device} {Device} {Device} temperature to {TemperatureGrade}",
+                        "change the {Device} temperature to {TemperatureGrade}",
                         "change {Device} to {TemperatureGrade}",
-                        "change the {Device} {Device} {Device} to {TemperatureGrade}",
+                        "change the {Device} to {TemperatureGrade}",
                         "set {Device} temperature to {TemperatureGrade} degree",
-                        "set the {Device} {Device} {Device} temperature to {TemperatureGrade} degree",
+                        "set the {Device} temperature to {TemperatureGrade} degree",
                         "set {Device} to {TemperatureGrade} degree",
-                        "set the {Device} {Device} {Device} to {TemperatureGrade} degree",
+                        "set the {Device} to {TemperatureGrade} degree",
                         "change {Device} temperature to {TemperatureGrade} degree",
-                        "change the {Device} {Device} {Device} temperature to {TemperatureGrade} degree",
+                        "change the {Device} temperature to {TemperatureGrade} degree",
                         "change {Device} to {TemperatureGrade} degree",
-                        "change the {Device} {Device} {Device} to {TemperatureGrade} degree"
+                        "change the {Device} to {TemperatureGrade} degree"
                     ]
                 },
                 {
@@ -100,7 +100,7 @@
                     "slots": [
                         {
                             "name": "Device",
-                            "type": "LIST_OF_DEVICES"
+                            "type": "AMAZON.DeviceType"
                         },
                         {
                             "name": "WindGrade",
@@ -109,13 +109,13 @@
                     ],
                     "samples": [
                         "set {Device} wind speed to {WindGrade}",
-                        "set the {Device} {Device} {Device} wind speed to {WindGrade}",
+                        "set the {Device} wind speed to {WindGrade}",
                         "set {Device} to {WindGrade}",
-                        "set the {Device} {Device} {Device} to {WindGrade}",
+                        "set the {Device} to {WindGrade}",
                         "change {Device} wind speed to {WindGrade}",
-                        "change the {Device} {Device} {Device} wind speed to {WindGrade}",
+                        "change the {Device} wind speed to {WindGrade}",
                         "change {Device} to {WindGrade}",
-                        "change the {Device} {Device} {Device} to {WindGrade}"
+                        "change the {Device} to {WindGrade}"
                     ]
                 },
                 {
@@ -123,7 +123,7 @@
                     "slots": [
                         {
                             "name": "Device",
-                            "type": "LIST_OF_DEVICES"
+                            "type": "AMAZON.DeviceType"
                         },
                         {
                             "name": "BrightnessGrade",
@@ -132,13 +132,13 @@
                     ],
                     "samples": [
                         "set {Device} brightness to {BrightnessGrade} percent",
-                        "set the {Device} {Device} {Device} brightness to {BrightnessGrade} percent",
+                        "set the {Device} brightness to {BrightnessGrade} percent",
                         "set {Device} to {BrightnessGrade} percent",
-                        "set the {Device} {Device} {Device} to {BrightnessGrade} percent",
+                        "set the {Device} to {BrightnessGrade} percent",
                         "change {Device} brightness to {BrightnessGrade} percent",
-                        "change the {Device} {Device} {Device} brightness to {BrightnessGrade} percent",
+                        "change the {Device} brightness to {BrightnessGrade} percent",
                         "change {Device} to {BrightnessGrade} percent",
-                        "change the {Device} {Device} {Device} to {BrightnessGrade} percent"
+                        "change the {Device} to {BrightnessGrade} percent"
                     ]
                 },
                 {
@@ -146,7 +146,7 @@
                     "slots": [
                         {
                             "name": "Device",
-                            "type": "LIST_OF_DEVICES"
+                            "type": "AMAZON.DeviceType"
                         },
                         {
                             "name": "ColorGrade",
@@ -155,15 +155,15 @@
                     ],
                     "samples": [
                         "set {Device} color to {ColorGrade}",
-                        "set the {Device} {Device} {Device} Color to {ColorGrade}",
+                        "set the {Device} Color to {ColorGrade}",
                         "set {Device} color to {ColorGrade}",
-                        "set the {Device} {Device} {Device} Color to {ColorGrade}",
+                        "set the {Device} Color to {ColorGrade}",
                         "set {Device} to {ColorGrade}",
-                        "set the {Device} {Device} {Device} to {ColorGrade}",
+                        "set the {Device} to {ColorGrade}",
                         "change {Device} color to {ColorGrade}",
-                        "change the {Device} {Device} {Device} color to {ColorGrade}",
+                        "change the {Device} color to {ColorGrade}",
                         "change {Device} to {ColorGrade}",
-                        "change the {Device} {Device} {Device} to {ColorGrade}"
+                        "change the {Device} to {ColorGrade}"
                     ]
                 },
                 {
@@ -171,18 +171,18 @@
                     "slots": [
                         {
                             "name": "Device",
-                            "type": "LIST_OF_DEVICES"
+                            "type": "AMAZON.DeviceType"
                         }
                     ],
                     "samples": [
                         "set {Device} to next one",
-                        "set the {Device} {Device} {Device} to next one",
+                        "set the {Device} to next one",
                         "set {Device} to next song",
-                        "set the {Device} {Device} {Device} to next song",
+                        "set the {Device} to next song",
                         "change {Device} to next one",
-                        "change the {Device} {Device} {Device} to next one",
+                        "change the {Device} to next one",
                         "change {Device} to next song",
-                        "change the {Device} {Device} {Device} to next song"
+                        "change the {Device} to next song"
                     ]
                 },
                 {
@@ -190,18 +190,18 @@
                     "slots": [
                         {
                             "name": "Device",
-                            "type": "LIST_OF_DEVICES"
+                            "type": "AMAZON.DeviceType"
                         }
                     ],
                     "samples": [
                         "set {Device} to previous one",
-                        "set the {Device} {Device} {Device} to previous one",
+                        "set the {Device} to previous one",
                         "set {Device} to previous song",
-                        "set the {Device} {Device} {Device} to previous song",
+                        "set the {Device} to previous song",
                         "change {Device} to previous one",
-                        "change the {Device} {Device} {Device} to previous one",
+                        "change the {Device} to previous one",
                         "change {Device} to previous song",
-                        "change the {Device} {Device} {Device} to previous song"
+                        "change the {Device} to previous song"
                     ]
                 },
                 {
@@ -209,7 +209,7 @@
                     "slots": [
                         {
                             "name": "Device",
-                            "type": "LIST_OF_DEVICES"
+                            "type": "AMAZON.DeviceType"
                         },
                         {
                             "name": "MusicVolumeGrade",
@@ -218,9 +218,9 @@
                     ],
                     "samples": [
                         "set {Device} volume to {MusicVolumeGrade} percent",
-                        "set the {Device} {Device} {Device} volume to {MusicVolumeGrade} percent",
+                        "set the {Device} volume to {MusicVolumeGrade} percent",
                         "change {Device} volume to {MusicVolumeGrade} percent",
-                        "change the {Device} {Device} {Device} volume to {MusicVolumeGrade} percent"
+                        "change the {Device} volume to {MusicVolumeGrade} percent"
                     ]
                 },
                 {
@@ -294,7 +294,7 @@
             ],
             "types": [
                 {
-                    "name": "LIST_OF_DEVICES",
+                    "name": "AMAZON.DeviceType",
                     "values": [
                         {
                             "name": {
